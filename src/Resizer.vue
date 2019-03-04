@@ -88,12 +88,12 @@ export default {
   transition: all 0.3s ease;
 }
 
-.Resizer.rows {
+.Resizer.rowsres {
   cursor: row-resize;
   width: 100%;
 }
 
-.Resizer.columns {
+.Resizer.columnsres {
   height: 100%;
   cursor: col-resize;
 }
