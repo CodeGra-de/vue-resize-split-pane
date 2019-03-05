@@ -19,8 +19,8 @@
         :resizerThickness="resizerThickness"
         :resizerBorderThickness="resizerBorderThickness"
         :class="{
-          rows: splitTo === 'rowsres',
-          columns: splitTo === 'columnsres'}"
+          rowsres: splitTo === 'rows',
+          columnsres: splitTo === 'columns'}"
         ></resizer-comp>
       <pane-comp
         ref="pane2"
