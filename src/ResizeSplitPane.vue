@@ -19,8 +19,8 @@
         :resizerThickness="resizerThickness"
         :resizerBorderThickness="resizerBorderThickness"
         :class="{
-          rows: splitTo === 'rows',
-          columns: splitTo === 'columns'}"
+          rowsres: splitTo === 'rows',
+          columnsres: splitTo === 'columns'}"
         ></resizer-comp>
       <pane-comp
         ref="pane2"
@@ -271,6 +271,19 @@ export default {
 
 .root {
   height: 100%;
+  width: 100%;
+}
+.columns {
+  flex-direction: row;
+  left: 0;
+  right: 0;
+}
+
+.rows {
+  flex-direction: column;
+  bottom: 0;
+  top: 0;
+  min-height: 100%;
   width: 100%;
 }
 
