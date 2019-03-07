@@ -2,6 +2,7 @@
   <div
     class="pane-rs root"
     :class="classObject"
+    :style="paneStyle"
     @mousemove="onMouseMove"
     @mouseup="onMouseUp">
       <pane-comp
@@ -87,6 +88,12 @@ export default {
         columns: this.splitTo === 'columns',
         rows: this.splitTo === 'rows',
       }
+    },
+    paneStyle() {
+	  const cursor = this.active ? (this.splitTo === 'columns' ? 'col-resize' : 'row-resize') : 'unset'
+	  return {
+	    cursor
+	  }
     },
     iStyleFirst() {
       let el = 'first'
@@ -214,7 +221,7 @@ export default {
                 ? this.round2Fixed((size - sizeDelta) * 100 / pSize)
                 : size - sizeDelta
 
-            const newPosition = position - positionDelta
+            let newPosition = position - positionDelta
 
             if (this.step) {
               if (Math.abs(positionDelta) < this.step) {
@@ -226,9 +233,11 @@ export default {
 
             if (minSize && newSize < minSize) {
               newSize = minSize
+              newPosition = this.position
             }
             if (maxSize && newSize > maxSize) {
               newSize = maxSize
+              newPosition = this.position
             }
 
             this.localSize = newSize
