@@ -214,7 +214,7 @@ export default {
                 ? this.round2Fixed((size - sizeDelta) * 100 / pSize)
                 : size - sizeDelta
 
-            const newPosition = position - positionDelta
+            let newPosition = position - positionDelta
 
             if (this.step) {
               if (Math.abs(positionDelta) < this.step) {
@@ -226,9 +226,11 @@ export default {
 
             if (minSize && newSize < minSize) {
               newSize = minSize
+              newPosition = this.position
             }
             if (maxSize && newSize > maxSize) {
               newSize = maxSize
+              newPosition = this.position
             }
 
             this.localSize = newSize
