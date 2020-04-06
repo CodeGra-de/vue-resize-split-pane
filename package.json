@@ -5,7 +5,7 @@
   "author": "Raven78",
   "license": "SEE LICENCE IN LICENCE.md",
   "bugs": {
-    "url": "https://github.com/raven78/vue-resize-split-pane/issues"
+    "url": "https://github.com/CodeGra-de/vue-resize-split-pane/issues"
   },
   "main": "src/ResizeSplitPane.vue",
   "private": false,
@@ -20,9 +20,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raven78/vue-resize-split-pane.git"
+    "url": "git+https://github.com/CodeGra-de/vue-resize-split-pane.git"
   },
-  "homepage": "https://github.com/raven78/vue-resize-split-pane#readme",
+  "homepage": "https://github.com/CodeGra-de/vue-resize-split-pane#readme",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

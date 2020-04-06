@@ -68,6 +68,8 @@ export default {
     resizerColor: { type: String, default: '#AAA' }, //  any css color - if you set transparency, it will afect the border too
     resizerBorderColor: { type: String, default: 'rgba(0,0,0, 0.15)' }, // any css color - #FFF, rgb(0,0,0), rgba(0,0,0,0)
     resizerBorderThickness: { type: Number, default: 3 }, // in px - border that forms the shadow
+    onDragStarted: { type: Function, default: null },
+    onDragFinished: { type: Function, default: null },
   },
   data() {
     return {
@@ -157,7 +159,7 @@ export default {
             : event.touches[0].clientY
 
         if (typeof this.onDragStarted === 'function') {
-          onDragStarted()
+          this.onDragStarted()
         }
         this.active = true
         this.position = position
